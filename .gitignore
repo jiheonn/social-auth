@@ -1,0 +1,8 @@
+# editor
+.DS_Store
+
+# npm packages
+node_modules
+
+# config
+.env
