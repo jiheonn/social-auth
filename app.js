@@ -18,6 +18,9 @@ configureSession(app);
 const configurePassport = require('./config/passport');
 configurePassport(app);
 
+const flash = require('connect-flash');
+app.use(flash());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
