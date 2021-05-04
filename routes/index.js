@@ -13,6 +13,20 @@ router.get('/', (req, res) => {
     `);
   } else {
     res.send(`
+      <form action="/auth/login" method="post">
+        <div>
+          <label>Username:</label>
+          <input type="text" name="id" />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type="password" name="pwd" />
+        </div>
+        <div>
+          <input type="submit" value="login" />
+        </div>
+      </form>
+
       <h3>Node Passport Social Login</h3>
       <a href="/auth/login/naver"><img src="/images/naver_login.png" width="300" /></a><br><br>
       <a href="/auth/login/kakao"><img src="/images/kakao_login.png" width="300" /></a>
