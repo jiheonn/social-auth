@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   if (req.user) {
     res.send(`
       <h3>Login Success</h3>
-      <a href="/auth/logout"><img src="/images/naver_logout.png" /></a>
+      <a href="/auth/logout"><button>로그아웃</button></a>
       <p>
         ${JSON.stringify(req.user, null, 2)}
       </p>
@@ -14,8 +14,8 @@ router.get('/', (req, res) => {
   } else {
     res.send(`
       <h3>Node Passport Social Login</h3>
-      <a href="/auth/login/naver"><img src="/images/naver_login.png" /></a>
-      <a href="/auth/login/kakao">Login with Kakao</a>
+      <a href="/auth/login/naver"><img src="/images/naver_login.png" width="300" /></a><br><br>
+      <a href="/auth/login/kakao"><img src="/images/kakao_login.png" width="300" /></a>
     `);
   }
 });
