@@ -8,7 +8,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, done) => {
     done(null, file.originalname);
-    // done(null, req.params.id);
+    // done(null, req.query.id);
   }
 });
 const uploader = multer({ storage: storage });
@@ -21,6 +21,10 @@ router.get('/upload', (req, res) => {
   </form>
   `);
 });
+
+// router.post('/upload', uploader.single('uploadFile'), (req, res) => {
+// res.redirect('/upload');
+// });
 
 router.post('/upload', uploader.array('uploadFile'), (req, res) => {
   // res.redirect('/upload');
