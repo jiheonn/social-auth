@@ -14,9 +14,11 @@ const app = express();
 
 const configureSession = require('./config/session');
 configureSession(app);
-
 const configurePassport = require('./config/passport');
 configurePassport(app);
+
+const configureProxy = require('./config/proxy');
+configureProxy(app);
 
 const flash = require('connect-flash');
 app.use(flash());

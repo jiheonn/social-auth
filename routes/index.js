@@ -8,6 +8,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, done) => {
     done(null, file.originalname);
+    // done(null, req.params.id);
   }
 });
 const uploader = multer({ storage: storage });
@@ -22,7 +23,10 @@ router.get('/upload', (req, res) => {
 });
 
 router.post('/upload', uploader.array('uploadFile'), (req, res) => {
-  res.redirect('/upload');
+  // res.redirect('/upload');
+  res.status(200).json({
+    message: '업로드 완료',
+  });
 });
 
 /* GET home page. */
